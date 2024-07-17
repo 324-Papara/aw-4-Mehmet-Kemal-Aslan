@@ -1,0 +1,15 @@
+C:\Users\Mehmet Kemal\Desktop\Uygulama\Para.Api\Para.Schema\bin\Debug\net8.0\Para.Schema.deps.json
+C:\Users\Mehmet Kemal\Desktop\Uygulama\Para.Api\Para.Schema\bin\Debug\net8.0\Para.Schema.dll
+C:\Users\Mehmet Kemal\Desktop\Uygulama\Para.Api\Para.Schema\bin\Debug\net8.0\Para.Schema.pdb
+C:\Users\Mehmet Kemal\Desktop\Uygulama\Para.Api\Para.Schema\bin\Debug\net8.0\Para.Base.dll
+C:\Users\Mehmet Kemal\Desktop\Uygulama\Para.Api\Para.Schema\bin\Debug\net8.0\Para.Base.pdb
+C:\Users\Mehmet Kemal\Desktop\Uygulama\Para.Api\Para.Schema\obj\Debug\net8.0\Para.Schema.csproj.AssemblyReference.cache
+C:\Users\Mehmet Kemal\Desktop\Uygulama\Para.Api\Para.Schema\obj\Debug\net8.0\Para.Schema.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mehmet Kemal\Desktop\Uygulama\Para.Api\Para.Schema\obj\Debug\net8.0\Para.Schema.AssemblyInfoInputs.cache
+C:\Users\Mehmet Kemal\Desktop\Uygulama\Para.Api\Para.Schema\obj\Debug\net8.0\Para.Schema.AssemblyInfo.cs
+C:\Users\Mehmet Kemal\Desktop\Uygulama\Para.Api\Para.Schema\obj\Debug\net8.0\Para.Schema.csproj.CoreCompileInputs.cache
+C:\Users\Mehmet Kemal\Desktop\Uygulama\Para.Api\Para.Schema\obj\Debug\net8.0\Para.Schema.csproj.CopyComplete
+C:\Users\Mehmet Kemal\Desktop\Uygulama\Para.Api\Para.Schema\obj\Debug\net8.0\Para.Schema.dll
+C:\Users\Mehmet Kemal\Desktop\Uygulama\Para.Api\Para.Schema\obj\Debug\net8.0\refint\Para.Schema.dll
+C:\Users\Mehmet Kemal\Desktop\Uygulama\Para.Api\Para.Schema\obj\Debug\net8.0\Para.Schema.pdb
+C:\Users\Mehmet Kemal\Desktop\Uygulama\Para.Api\Para.Schema\obj\Debug\net8.0\ref\Para.Schema.dll
