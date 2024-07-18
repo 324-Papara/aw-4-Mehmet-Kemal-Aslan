@@ -38,19 +38,33 @@ namespace Para.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<ApiResponse<CustomerResponse>> Post([FromBody] CustomerRequest value)
+        public async Task<ActionResult> Post([FromBody] CustomerRequest value)
         {
-            var operation = new CreateCustomerCommand(value);
-            var result = await mediator.Send(operation);
-            return result;
+            try
+            {
+                var operation = new CreateCustomerCommand(value);
+                var result = await mediator.Send(operation);
+                return Ok(result);
+            }
+            catch (ValidationException ex)
+            {
+                return BadRequest(new { Errors = ex.Message });
+            }
         }
 
         [HttpPut("{customerId}")]
-        public async Task<ApiResponse> Put(int customerId, [FromBody] CustomerRequest value)
+        public async Task<ActionResult> Put(int customerId, [FromBody] CustomerRequest value)
         {
-            var operation = new UpdateCustomerCommand(customerId, value);
-            var result = await mediator.Send(operation);
-            return result;
+            try
+            { 
+                var operation = new UpdateCustomerCommand(customerId, value);
+                var result = await mediator.Send(operation);
+                return Ok(result);
+            }
+            catch (ValidationException ex)
+            {
+                return BadRequest(new { Errors = ex.Message });
+            }
         }
 
         [HttpDelete("{customerId}")]

@@ -15,3 +15,4 @@ C:\Users\Mehmet Kemal\Desktop\Uygulama\Para.Api\Para.Data\obj\Debug\net8.0\refin
 C:\Users\Mehmet Kemal\Desktop\Uygulama\Para.Api\Para.Data\obj\Debug\net8.0\Para.Data.pdb
 C:\Users\Mehmet Kemal\Desktop\Uygulama\Para.Api\Para.Data\obj\Debug\net8.0\Para.Data.genruntimeconfig.cache
 C:\Users\Mehmet Kemal\Desktop\Uygulama\Para.Api\Para.Data\obj\Debug\net8.0\ref\Para.Data.dll
+C:\Users\Mehmet Kemal\Desktop\Uygulama\Para.Api\Para.Data\obj\Debug\net8.0\Para.Data.sourcelink.json

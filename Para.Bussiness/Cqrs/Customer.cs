@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using Para.Base.Response;
+using Para.Data.Domain;
 using Para.Schema.Models;
 using System;
 using System.Collections.Generic;
@@ -16,4 +17,5 @@ namespace Para.Bussiness.Cqrs
     public record GetAllCustomerQuery() : IRequest<ApiResponse<List<CustomerResponse>>>;
     public record GetCustomerByIdQuery(int CustomerId) : IRequest<ApiResponse<CustomerResponse>>;
     public record GetCustomerByName(string Name) : IRequest<ApiResponse<List<CustomerResponse>>>;
+    public record GetCustomerDetailsById(int CustomerId) : IRequest<ApiResponse<Customer>>;
 }

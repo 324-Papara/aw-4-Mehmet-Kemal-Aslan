@@ -5,6 +5,8 @@ using Para.Schema.Models;
 using MediatR;
 using Para.Bussiness.Cqrs;
 using Para.Data.Domain;
+using Para.Bussiness.Validation;
+using System.ComponentModel.DataAnnotations;
 
 namespace Para.Bussiness.Command
 {
@@ -24,6 +26,13 @@ namespace Para.Bussiness.Command
 
         public async Task<ApiResponse<CustomerResponse>> Handle(CreateCustomerCommand request, CancellationToken cancellationToken)
         {
+            CustomerValidator customerValidator = new CustomerValidator();
+            var validationResult = await customerValidator.ValidateAsync(request.Request);
+            if (!validationResult.IsValid)
+            {
+                var errors = string.Join(", ", validationResult.Errors.Select(e => e.ErrorMessage));
+                throw new ValidationException(errors);
+            }
             var mapped = mapper.Map<CustomerRequest, Customer>(request.Request);
             mapped.CustomerNumber = new Random().Next(1000000, 9999999);
             await unitOfWork.CustomerRepository.Insert(mapped);
@@ -35,8 +44,16 @@ namespace Para.Bussiness.Command
 
         public async Task<ApiResponse> Handle(UpdateCustomerCommand request, CancellationToken cancellationToken)
         {
+            CustomerValidator customerValidator = new CustomerValidator();
+            var validationResult = await customerValidator.ValidateAsync(request.Request);
+            if (!validationResult.IsValid)
+            {
+                var errors = string.Join(", ", validationResult.Errors.Select(e => e.ErrorMessage));
+                throw new ValidationException(errors);
+            }
             var mapped = mapper.Map<CustomerRequest, Customer>(request.Request);
             mapped.Id = request.CustomerId;
+            mapped.CustomerNumber = 12;
             unitOfWork.CustomerRepository.Update(mapped);
             await unitOfWork.Complete();
             return new ApiResponse();

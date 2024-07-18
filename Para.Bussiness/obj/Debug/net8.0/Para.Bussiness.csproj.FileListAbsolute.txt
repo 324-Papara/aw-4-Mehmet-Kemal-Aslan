@@ -17,3 +17,4 @@ C:\Users\Mehmet Kemal\Desktop\Uygulama\Para.Api\Para.Bussiness\obj\Debug\net8.0\
 C:\Users\Mehmet Kemal\Desktop\Uygulama\Para.Api\Para.Bussiness\obj\Debug\net8.0\refint\Para.Bussiness.dll
 C:\Users\Mehmet Kemal\Desktop\Uygulama\Para.Api\Para.Bussiness\obj\Debug\net8.0\Para.Bussiness.pdb
 C:\Users\Mehmet Kemal\Desktop\Uygulama\Para.Api\Para.Bussiness\obj\Debug\net8.0\ref\Para.Bussiness.dll
+C:\Users\Mehmet Kemal\Desktop\Uygulama\Para.Api\Para.Bussiness\obj\Debug\net8.0\Para.Bussiness.sourcelink.json
