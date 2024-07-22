@@ -13,3 +13,4 @@ C:\Users\Mehmet Kemal\Desktop\Uygulama\Para.Api\Para.Schema\obj\Debug\net8.0\Par
 C:\Users\Mehmet Kemal\Desktop\Uygulama\Para.Api\Para.Schema\obj\Debug\net8.0\refint\Para.Schema.dll
 C:\Users\Mehmet Kemal\Desktop\Uygulama\Para.Api\Para.Schema\obj\Debug\net8.0\Para.Schema.pdb
 C:\Users\Mehmet Kemal\Desktop\Uygulama\Para.Api\Para.Schema\obj\Debug\net8.0\ref\Para.Schema.dll
+C:\Users\Mehmet Kemal\Desktop\Uygulama\Para.Api\Para.Schema\obj\Debug\net8.0\Para.Schema.sourcelink.json

@@ -12,8 +12,8 @@ namespace Para.Bussiness.Validation
     {
         public CustomerPhoneValidator()
         {
-            RuleFor(x => x.CountyCode).NotEmpty().Length(3).WithMessage("Country Code is required.");
-            RuleFor(x => x.Phone).NotEmpty().MaximumLength(10).WithMessage("Phone is required.");
+            RuleFor(x => x.CountyCode).NotEmpty().WithMessage("Country Code is required.").Length(3).WithMessage("Country Code is 3 digits.");
+            RuleFor(x => x.Phone).NotEmpty().WithMessage("Phone is required.").MaximumLength(10).WithMessage("Maximum length of phone is 10.");
         }
     }
 }

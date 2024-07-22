@@ -5,7 +5,7 @@ using Para.Base.Response;
 using Para.Bussiness.Cqrs;
 using Para.Bussiness.Validation;
 using Para.Schema.Models;
-using System.ComponentModel.DataAnnotations;
+using FluentValidation;
 
 namespace Para.Api.Controllers
 {

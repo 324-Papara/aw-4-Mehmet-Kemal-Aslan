@@ -1,0 +1,42 @@
+﻿using AutoMapper;
+using MediatR;
+using Para.Base.Response;
+using Para.Data.UnitOfWork;
+using Para.Schema.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static Para.Bussiness.Cqrs.CustomerAddress;
+using static Para.Bussiness.Cqrs.CustomerPhone;
+
+namespace Para.Bussiness.Query
+{
+    public class CustomerPhoneQueryHandler :
+        IRequestHandler<GetAllCustomerPhoneQuery, ApiResponse<List<CustomerPhoneResponse>>>,
+        IRequestHandler<GetCustomerPhoneByIdQuery, ApiResponse<CustomerPhoneResponse>>
+    {
+        private readonly IUnitOfWork unitOfWork;
+        private readonly IMapper mapper;
+
+        public CustomerPhoneQueryHandler(IUnitOfWork unitOfWork, IMapper mapper)
+        {
+            this.unitOfWork = unitOfWork;
+            this.mapper = mapper;
+        }
+        public async Task<ApiResponse<List<CustomerPhoneResponse>>> Handle(GetAllCustomerPhoneQuery request, CancellationToken cancellationToken)
+        {
+            List<Data.Domain.CustomerPhone> entityList = await unitOfWork.CustomerPhoneRepository.GetAll();
+            var mappedList = mapper.Map<List<CustomerPhoneResponse>>(entityList);
+            return new ApiResponse<List<CustomerPhoneResponse>>(mappedList);
+        }
+
+        public async Task<ApiResponse<CustomerPhoneResponse>> Handle(GetCustomerPhoneByIdQuery request, CancellationToken cancellationToken)
+        {
+            var entity = await unitOfWork.CustomerPhoneRepository.GetById(request.CustomerId);
+            var mapped = mapper.Map<CustomerPhoneResponse>(entity);
+            return new ApiResponse<CustomerPhoneResponse>(mapped);
+        }
+    }
+}
