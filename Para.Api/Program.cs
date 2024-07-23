@@ -1,6 +1,7 @@
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Para.Api.Middlewares;
 using Para.Bussiness.Cqrs;
 using Para.Bussiness.Mapper;
 using Para.Data.Context;
@@ -44,6 +45,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseMiddleware<LogMiddleware>();
 
 app.UseHttpsRedirection();
 

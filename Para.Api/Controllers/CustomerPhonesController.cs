@@ -11,11 +11,11 @@ namespace Para.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CustomerPhoneController : ControllerBase
+    public class CustomerPhonesController : ControllerBase
     {
         private readonly IMediator mediator;
 
-        public CustomerPhoneController(IMediator mediator)
+        public CustomerPhonesController(IMediator mediator)
         {
             this.mediator = mediator;
         }
