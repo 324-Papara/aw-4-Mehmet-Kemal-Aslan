@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "wqvgzzTNMyIckfDZ2tAR8j7o/kHCPI2ohqaEmwDhp2HrjsdZGiTXDQlQ40vQOdSHzdsgbCVrXivytY/Wyj6Fbw==",
+  "dgSpecHash": "ELA3H0KTVQz2T0CAUXW1iBdNl04cLcn2zVM3CLscDjTOwP/Wvi3vtWhff2Pd4fg5tithWBPFJ/VzcKjJsZfFFg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Mehmet Kemal\\Desktop\\Uygulama\\Para.Api\\Para.Data\\Para.Data.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Mehmet Kemal\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\Mehmet Kemal\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Mehmet Kemal\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
+    "C:\\Users\\Mehmet Kemal\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512",
     "C:\\Users\\Mehmet Kemal\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Mehmet Kemal\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
     "C:\\Users\\Mehmet Kemal\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\3.3.3\\microsoft.codeanalysis.analyzers.3.3.3.nupkg.sha512",

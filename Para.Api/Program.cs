@@ -1,39 +1,24 @@
 using AutoMapper;
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Para.Api.Middlewares;
-using Para.Bussiness.Cqrs;
-using Para.Bussiness.Mapper;
-using Para.Data.Context;
-using Para.Data.UnitOfWork;
 using System.Reflection;
+using Para.Api.AutoFacModule;
+using Para.Bussiness.Cqrs;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
-var connectionStringMsSql = builder.Configuration.GetConnectionString("MsSqlConnection");
-builder.Services.AddDbContext<ParaMsSqlDbContext>(options =>
-options.UseSqlServer(connectionStringMsSql));
-
-//var connectionStringPostgre = builder.Configuration.GetConnectionString("PostgresSqlConnection");
-//builder.Services.AddDbContext<ParaPostgreDbContext>(options =>
-//options.UseNpgsql(connectionStringPostgre));
-
-builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
-
-var config = new MapperConfiguration(cfg =>
+// Use Autofac as the DI container
+builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
+builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>
 {
-    cfg.AddProfile(new MapperConfig());
+    containerBuilder.RegisterModule(new AutoFacModule(builder.Configuration));
 });
-builder.Services.AddSingleton(config.CreateMapper());
 
-//builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
-builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(CreateCustomerCommand).Assembly));
-
-
+// Add services to the container.
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
