@@ -19,10 +19,10 @@ namespace Para.Bussiness.Notifications
                 Port = 587,
                 EnableSsl = true,
                 UseDefaultCredentials = false,
-                Credentials = new System.Net.NetworkCredential("kadikoy_fener@hotmail.com", "MHTKLgrz1453")
+                Credentials = new System.Net.NetworkCredential("mailadresim@hotmail.com", "password")
             };
 
-            MailAddress from = new MailAddress("kadikoy_fener@hotmail.com", "Company");
+            MailAddress from = new MailAddress("mailadresim@hotmail.com", "Company");
             MailAddress to = new MailAddress(email);
             MailMessage myMail = new MailMessage(from, to)
             {
