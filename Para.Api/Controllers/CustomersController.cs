@@ -6,6 +6,7 @@ using Para.Bussiness.Cqrs;
 using Para.Bussiness.Validation;
 using Para.Schema.Models;
 using FluentValidation;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Para.Api.Controllers
 {
@@ -22,6 +23,7 @@ namespace Para.Api.Controllers
 
 
         [HttpGet]
+        [Authorize(Roles = "admin")]
         public async Task<ApiResponse<List<CustomerResponse>>> Get()
         {
             var operation = new GetAllCustomerQuery();
@@ -30,6 +32,7 @@ namespace Para.Api.Controllers
         }
 
         [HttpGet("{customerId}")]
+        [Authorize(Roles = "admin")]
         public async Task<ApiResponse<CustomerResponse>> Get([FromRoute] int customerId)
         {
             var operation = new GetCustomerByIdQuery(customerId);
@@ -38,6 +41,7 @@ namespace Para.Api.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "admin")]
         public async Task<ActionResult> Post([FromBody] CustomerRequest value)
         {
             try
@@ -53,10 +57,11 @@ namespace Para.Api.Controllers
         }
 
         [HttpPut("{customerId}")]
+        [Authorize(Roles = "admin")]
         public async Task<ActionResult> Put(int customerId, [FromBody] CustomerRequest value)
         {
             try
-            { 
+            {
                 var operation = new UpdateCustomerCommand(customerId, value);
                 var result = await mediator.Send(operation);
                 return Ok(result);
@@ -68,6 +73,7 @@ namespace Para.Api.Controllers
         }
 
         [HttpDelete("{customerId}")]
+        [Authorize(Roles = "admin")]
         public async Task<ApiResponse> Delete(int customerId)
         {
             var operation = new DeleteCustomerCommand(customerId);
@@ -76,6 +82,7 @@ namespace Para.Api.Controllers
         }
 
         [HttpGet("GetByName")]
+        [Authorize(Roles = "admin")]
         public async Task<ActionResult> Get([FromQuery] string? name)
         {
             try
@@ -89,5 +96,5 @@ namespace Para.Api.Controllers
                 return BadRequest(new { Errors = ex.Message });
             }
         }
-    }   
+    }
 }

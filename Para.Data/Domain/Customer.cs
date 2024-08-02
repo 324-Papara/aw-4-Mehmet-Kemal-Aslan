@@ -18,8 +18,10 @@ namespace Para.Data.Domain
         public int CustomerNumber { get; set; }
         public DateTime DateOfBirth { get; set; }
 
+        public virtual User User { get; set; }
         public virtual List<CustomerAddress> CustomerAddresses { get; set; }
         public virtual List<CustomerPhone> CustomerPhones { get; set; }
         public virtual CustomerDetail CustomerDetails { get; set; }
+        public virtual List<Account> Accounts { get; set; }
     }
 }

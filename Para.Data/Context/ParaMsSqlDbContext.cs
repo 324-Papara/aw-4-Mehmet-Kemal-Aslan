@@ -16,9 +16,6 @@ namespace Para.Data.Context
         }
 
         public DbSet<Customer> Customers { get; set; }
-        public DbSet<CustomerAddress> CustomerAddresses { get; set; }
-        public DbSet<CustomerPhone> CustomerPhones { get; set; }
-        public DbSet<CustomerDetail> CustomerDetails { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -26,7 +23,10 @@ namespace Para.Data.Context
             modelBuilder.ApplyConfiguration(new CustomerDetailConfiguration());
             modelBuilder.ApplyConfiguration(new CustomerAddressConfiguration());
             modelBuilder.ApplyConfiguration(new CustomerPhoneConfiguration());
-
+            modelBuilder.ApplyConfiguration(new UserConfiguration());
+            modelBuilder.ApplyConfiguration(new CountryConfiguration());
+            modelBuilder.ApplyConfiguration(new AccountConfiguration());
+            modelBuilder.ApplyConfiguration(new AccountTransactionConfiguration());
         }
     }
 }

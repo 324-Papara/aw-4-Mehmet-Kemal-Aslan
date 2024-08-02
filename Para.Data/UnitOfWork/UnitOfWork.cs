@@ -3,6 +3,7 @@ using Para.Data.Domain;
 using Para.Data.GenericRepository;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Metrics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,11 @@ namespace Para.Data.UnitOfWork
         public IGenericRepository<CustomerDetail> CustomerDetailRepository { get; }
         public IGenericRepository<CustomerAddress> CustomerAddressRepository { get; }
         public IGenericRepository<CustomerPhone> CustomerPhoneRepository { get; }
+        public IGenericRepository<User> UserRepository { get; }
+        public IGenericRepository<Country> CountryRepository { get; }
+        public IGenericRepository<Account> AccountRepository { get; }
+        public IGenericRepository<AccountTransaction> AccountTransactionRepository { get; }
+
 
 
 
@@ -28,6 +34,10 @@ namespace Para.Data.UnitOfWork
             CustomerDetailRepository = new GenericRepository<CustomerDetail>(this.dbContext);
             CustomerAddressRepository = new GenericRepository<CustomerAddress>(this.dbContext);
             CustomerPhoneRepository = new GenericRepository<CustomerPhone>(this.dbContext);
+            UserRepository = new GenericRepository<User>(this.dbContext);
+            CountryRepository = new GenericRepository<Country>(this.dbContext);
+            AccountRepository = new GenericRepository<Account>(this.dbContext);
+            //AccountTransactionRepository = new GenericRepository<AccountTransaction>(this.dbContext);
         }
 
         public void Dispose()

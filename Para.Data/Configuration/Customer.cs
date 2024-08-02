@@ -40,6 +40,18 @@ namespace Para.Data.Configuration
                 .HasForeignKey<CustomerDetail>(x => x.CustomerId)
                 .IsRequired(true)
                 .OnDelete(DeleteBehavior.Cascade);
+
+            builder.HasOne(x => x.User)
+            .WithOne(x => x.Customer)
+            .HasForeignKey<User>(x => x.CustomerId)
+            .IsRequired(false)
+            .OnDelete(DeleteBehavior.Cascade);
+
+            builder.HasMany(x => x.Accounts)
+            .WithOne(x => x.Customer)
+            .HasForeignKey(x => x.CustomerId)
+            .IsRequired(true)
+            .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

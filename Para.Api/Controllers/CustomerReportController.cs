@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Para.Data.CustomerReportRepository;
 using Para.Data.Domain;
@@ -18,6 +19,7 @@ namespace Para.Api.Controllers
         }
 
         [HttpGet("GetCustomersReport")]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> GetActiveCustomers()
         {
             IEnumerable<CustomerReportRequestResponse> customers = await _customerReportRepository.GetCustomerReport();

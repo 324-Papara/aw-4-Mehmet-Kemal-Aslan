@@ -1,5 +1,6 @@
 ﻿using FluentValidation;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Para.Base.Response;
@@ -23,6 +24,7 @@ namespace Para.Api.Controllers
 
 
         [HttpGet]
+        [Authorize(Roles = "admin")]
         public async Task<ApiResponse<List<CustomerAddressResponse>>> Get()
         {
             var operation = new GetAllCustomerAddressQuery();
@@ -31,6 +33,7 @@ namespace Para.Api.Controllers
         }
 
         [HttpGet("{customerAddressId}")]
+        [Authorize(Roles = "admin")]
         public async Task<ApiResponse<CustomerAddressResponse>> Get([FromRoute] int customerAddressId)
         {
             var operation = new GetCustomerAddressByIdQuery(customerAddressId);
@@ -39,6 +42,7 @@ namespace Para.Api.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "admin")]
         public async Task<ActionResult> Post([FromBody] CustomerAddressRequest value)
         {
             try
@@ -54,6 +58,7 @@ namespace Para.Api.Controllers
         }
 
         [HttpPut("{customerAddressId}")]
+        [Authorize(Roles = "admin")]
         public async Task<ActionResult> Put(int customerAddressId, [FromBody] CustomerAddressRequest value)
         {
             try
@@ -69,6 +74,7 @@ namespace Para.Api.Controllers
         }
 
         [HttpDelete("{customerAddressId}")]
+        [Authorize(Roles = "admin")]
         public async Task<ApiResponse> Delete(int customerAddressId)
         {
             var operation = new DeleteCustomerAddressCommand(customerAddressId);

@@ -9,3 +9,5 @@ C:\Users\Mehmet Kemal\Desktop\Uygulama\Para.Api\Para.Base\obj\Debug\net8.0\Para.
 C:\Users\Mehmet Kemal\Desktop\Uygulama\Para.Api\Para.Base\obj\Debug\net8.0\refint\Para.Base.dll
 C:\Users\Mehmet Kemal\Desktop\Uygulama\Para.Api\Para.Base\obj\Debug\net8.0\Para.Base.pdb
 C:\Users\Mehmet Kemal\Desktop\Uygulama\Para.Api\Para.Base\obj\Debug\net8.0\ref\Para.Base.dll
+C:\Users\Mehmet Kemal\Desktop\Uygulama\Para.Api\Para.Base\obj\Debug\net8.0\Para.Base.sourcelink.json
+C:\Users\Mehmet Kemal\Desktop\Uygulama\Para.Api\Para.Base\obj\Debug\net8.0\Para.Base.csproj.AssemblyReference.cache
