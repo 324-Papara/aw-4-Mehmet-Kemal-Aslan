@@ -92,6 +92,8 @@ var app = builder.Build();
 
 app.UseHangfireDashboard();
 
+RecurringJob.AddOrUpdate<IEmailQueueConsumer>("email_queue", job => job.Start(), "*/5 * * * * *");
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -110,9 +112,5 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapControllers();
-
-// RabbitMQ Consumer baþlatma
-var emailQueueConsumer = app.Services.GetService<IEmailQueueConsumer>();
-emailQueueConsumer.Start();
 
 app.Run();
